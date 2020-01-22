@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+mypy = "*"
+flake8 = "*"
+black = "*"
+pydocstyle = "*"
+
+[packages]
+jupyter = "*"
+jupyterlab = "*"
+pandas = "*"
+numpy = "*"
+tensorflow = "*"
+scikit-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+scipy = "*"
+src = {editable = true,path = "."}
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
