@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class AdalineGD:
+class LogisticRegressionGD:
     def __init__(self, eta=0.01, n_iter=50, shuffle=True, random_state=None):
         """Adaptive LInear NEuron classifier.
 
@@ -82,17 +82,20 @@ class AdalineGD:
         error = target - output
         self.w_[1:] += self.eta * xi.dot(error)
         self.w_[0] += self.eta * error
-        cost = 0.5 * error ** 2
+        # cost = 0.5 * error ** 2
+        cost = -target * np.log(output) - (1 - target) * np.log(1 - output)
         return cost
 
     def net_input(self, X):
         """Calculate net input"""
         return np.dot(X, self.w_[1:]) + self.w_[0]
 
-    def activation(self, X):
-        """Compute linear activation"""
-        return X
+    def activation(self, z):
+        """Compute logistic sigmoid activation"""
+        return 1.0 / (1.0 + np.exp(-np.clip(z, -250, 250)))
 
     def predict(self, X):
         """Return class label after unit step."""
-        return np.where(self.activation(self.net_input(X)) >= 0.0, 1, -1)
+        return np.where(self.net_input(X) >= 0.0, 1, 0)
+        # same as
+        # return np.where(self.activation(self.net_input(X)) >= 0.5, 1, 0)

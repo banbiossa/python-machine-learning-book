@@ -3,7 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from src.perceptron import Perceptron, AdalineGD
+from src.perceptron import Perceptron 
+from src.adaline import AdalineGD
 
 from matplotlib.colors import ListedColormap
 
