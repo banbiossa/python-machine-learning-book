@@ -21,6 +21,10 @@ matplotlib = "*"
 seaborn = "*"
 scipy = "*"
 src = {editable = true,path = "."}
+pydotplus = "*"
+mypy = "*"
+flake8 = "*"
+black = "*"
 
 [requires]
 python_version = "3.7"
