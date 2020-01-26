@@ -70,7 +70,7 @@ def results():
 
 @app.route("/thanks", methods=["POST"])
 def feedback():
-    feedback = request.form(["feedback_button"])
+    feedback = request.form["feedback_button"]
     review = request.form["review"]
     prediction = request.form["prediction"]
 
@@ -80,7 +80,7 @@ def feedback():
         y = int(not (y))
     train(review, y)
     sqlite_entry(db, review, y)
-    render_template("thnaks.html")
+    render_template("thanks.html")
 
 
 if __name__ == "__main__":
