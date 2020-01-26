@@ -25,6 +25,9 @@ pydotplus = "*"
 mypy = "*"
 flake8 = "*"
 black = "*"
+pyprind = "*"
+nltk = "*"
+flask = "*"
 
 [requires]
 python_version = "3.7"
