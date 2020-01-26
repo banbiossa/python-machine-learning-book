@@ -28,6 +28,7 @@ black = "*"
 pyprind = "*"
 nltk = "*"
 flask = "*"
+wtforms = "*"
 
 [requires]
 python_version = "3.7"
