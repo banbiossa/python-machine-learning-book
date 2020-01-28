@@ -80,7 +80,7 @@ def feedback():
         y = int(not (y))
     train(review, y)
     sqlite_entry(db, review, y)
-    render_template("thanks.html")
+    return render_template("thanks.html")
 
 
 if __name__ == "__main__":
